@@ -68,25 +68,6 @@ export const siteSettingsSchema = {
       title: "Editorialblokk — sitatforfatter",
       type: "string",
     },
-    // Stats
-    {
-      name: "stats",
-      title: "Statistikk",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            { name: "num", title: "Tall", type: "string" },
-            { name: "label", title: "Etikett", type: "string" },
-            { name: "desc", title: "Beskrivelse", type: "string" },
-          ],
-          preview: {
-            select: { title: "num", subtitle: "label" },
-          },
-        },
-      ],
-    },
     // Dark CTA
     {
       name: "ctaTitle",
