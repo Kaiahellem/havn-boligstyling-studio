@@ -13,7 +13,7 @@ export const tjenesteSchema = {
       name: "slug",
       title: "Slug (anker-ID)",
       type: "slug",
-      description: "Brukes som anker i URL-en, f.eks. #boligstyling",
+      description: "Brukes som anker i URL-en (f.eks. #fullstyling) og til å filtrere prosjekter fra denne tjenesten",
       options: { source: "title" },
       validation: (r) => r.required(),
     },
@@ -31,10 +31,10 @@ export const tjenesteSchema = {
     },
     {
       name: "heroImage",
-      title: "Hero — bilde (tjenestesiden)",
+      title: "Bilde (tjenestesiden)",
       type: "image",
       options: { hotspot: true },
-      description: "Brukes kun for den første tjenesten, som hero-bilde øverst på siden",
+      description: "Vises som denne tjenestens eget bilde i tjenestelisten",
     },
     {
       name: "highlights",

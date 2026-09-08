@@ -1,78 +1,77 @@
 export const omOssSchema = {
   name: "omOss",
-  title: "Om oss",
+  title: "Om",
   type: "document",
   __experimental_actions: ["update", "publish"],
   fields: [
     {
-      name: "heroImage",
-      title: "Hero — bilde (høyre side)",
-      type: "image",
-      options: { hotspot: true },
-    },
-    {
       name: "aboutImage",
-      title: "Om-bilde (venstre side)",
+      title: "Portrettbilde",
       type: "image",
       options: { hotspot: true },
+      description: "Vises på forsiden og øverst på Om-siden",
     },
     {
-      name: "quote",
-      title: "Sitat (hero)",
-      type: "text",
-      rows: 3,
-    },
-    {
-      name: "quoteAuthor",
-      title: "Sitatforfatter",
+      name: "name",
+      title: "Navn",
       type: "string",
     },
     {
+      name: "role",
+      title: "Rolle/tittel",
+      type: "string",
+      description: "F.eks. «Gründer og interiørstylist»",
+    },
+    {
       name: "bodyText1",
-      title: "Brødtekst 1",
+      title: "Bio — første avsnitt",
       type: "text",
       rows: 4,
     },
     {
       name: "bodyText2",
-      title: "Brødtekst 2",
+      title: "Bio — andre avsnitt",
       type: "text",
       rows: 4,
     },
     {
-      name: "values",
-      title: "Verdier",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            { name: "title", title: "Tittel", type: "string" },
-            { name: "desc", title: "Beskrivelse", type: "text", rows: 2 },
-          ],
-          preview: {
-            select: { title: "title" },
-          },
-        },
-      ],
+      name: "galleryLabel",
+      title: "Prosessgalleri — liten etikett",
+      type: "string",
     },
     {
-      name: "stats",
-      title: "Statistikk",
+      name: "galleryHeading",
+      title: "Prosessgalleri — overskrift",
+      type: "string",
+    },
+    {
+      name: "gallerySteps",
+      title: "Prosessgalleri — steg",
       type: "array",
       of: [
         {
           type: "object",
           fields: [
-            { name: "num", title: "Tall", type: "string" },
-            { name: "label", title: "Etikett", type: "string" },
-            { name: "desc", title: "Beskrivelse", type: "string" },
+            { name: "label", title: "Steg-tittel", type: "string" },
+            { name: "body", title: "Tekst", type: "text", rows: 2 },
+            {
+              name: "image",
+              title: "Bilde",
+              type: "image",
+              options: { hotspot: true },
+            },
           ],
           preview: {
-            select: { title: "num", subtitle: "label" },
+            select: { title: "label", media: "image" },
           },
         },
       ],
+      validation: (r) => r.max(6),
+    },
+    {
+      name: "cta",
+      title: "CTA-seksjon",
+      type: "ctaBlock",
     },
   ],
 };

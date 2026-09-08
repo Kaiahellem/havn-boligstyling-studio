@@ -26,28 +26,48 @@ export const projectSchema = {
       name: "images",
       title: "Bildegalleri",
       type: "array",
-      of: [{ type: "image", options: { hotspot: true } }],
+      of: [
+        {
+          type: "object",
+          name: "galleryImage",
+          fields: [
+            {
+              name: "image",
+              title: "Bilde",
+              type: "image",
+              options: { hotspot: true },
+              validation: (r) => r.required(),
+            },
+            {
+              name: "caption",
+              title: "Bildetekst",
+              type: "string",
+              description: "Valgfri — vises som bildetekst i galleriet",
+            },
+          ],
+          preview: {
+            select: { title: "caption", media: "image" },
+          },
+        },
+      ],
     },
     {
       name: "description",
-      title: "Beskrivelse",
+      title: "Undertekst",
       type: "text",
-      rows: 3,
-    },
-    {
-      name: "city",
-      title: "Sted",
-      type: "string",
+      rows: 2,
+      description: "Kort tekstlinje under tittelen på prosjektsiden, f.eks. «Fullstyling, Oslo» — ikke en full beskrivelse",
     },
     {
       name: "service",
       title: "Tjeneste",
       type: "string",
+      description: "Brukes til å filtrere prosjekter når man klikker seg inn fra en tjeneste",
       options: {
         list: [
-          { title: "Boligstyling", value: "Boligstyling" },
-          { title: "Konsultasjon", value: "Konsultasjon" },
-          { title: "Utleiestyling", value: "Utleiestyling" },
+          { title: "Fullstyling", value: "Fullstyling" },
+          { title: "Delstyling", value: "Delstyling" },
+          { title: "Rådgivning", value: "Rådgivning" },
         ],
       },
     },
