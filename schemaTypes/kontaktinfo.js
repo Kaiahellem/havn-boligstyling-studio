@@ -41,4 +41,7 @@ export const kontaktinfoSchema = {
       fieldset: "kontaktside",
     },
   ],
+  preview: {
+    prepare: () => ({ title: "Kontaktinfo" }),
+  },
 };

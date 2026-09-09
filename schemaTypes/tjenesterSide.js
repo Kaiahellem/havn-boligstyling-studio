@@ -11,4 +11,7 @@ export const tjenesterSideSchema = {
       description: "Avsluttende seksjon nederst på tjenester-siden",
     },
   ],
+  preview: {
+    prepare: () => ({ title: "Tjenester" }),
+  },
 };

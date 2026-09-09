@@ -12,4 +12,8 @@ export const siteSettingsSchema = {
       description: "Vises i header og footer på alle sider",
     },
   ],
+  preview: {
+    select: { media: "logo" },
+    prepare: ({ media }) => ({ title: "Generelt", media }),
+  },
 };

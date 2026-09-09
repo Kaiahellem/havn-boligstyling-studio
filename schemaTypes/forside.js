@@ -51,4 +51,8 @@ export const forsideSchema = {
       validation: (r) => r.max(3),
     },
   ],
+  preview: {
+    select: { media: "heroImage" },
+    prepare: ({ media }) => ({ title: "Forside", media }),
+  },
 };

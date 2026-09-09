@@ -74,4 +74,8 @@ export const omOssSchema = {
       type: "ctaBlock",
     },
   ],
+  preview: {
+    select: { title: "name", media: "aboutImage" },
+    prepare: ({ title, media }) => ({ title: title || "Om", media }),
+  },
 };
