@@ -11,6 +11,18 @@ export const siteSettingsSchema = {
       options: { hotspot: true },
       description: "Vises i header og footer på alle sider",
     },
+    {
+      name: "instagramAccessToken",
+      title: "Instagram access token (fornyes automatisk)",
+      type: "string",
+      hidden: true,
+    },
+    {
+      name: "instagramTokenUpdatedAt",
+      title: "Instagram token sist fornyet (automatisk)",
+      type: "datetime",
+      hidden: true,
+    },
   ],
   preview: {
     select: { media: "logo" },
