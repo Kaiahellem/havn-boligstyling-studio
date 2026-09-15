@@ -9,7 +9,8 @@ export const omOssSchema = {
       title: "Portrettbilde",
       type: "image",
       options: { hotspot: true },
-      description: "Vises på forsiden og øverst på Om-siden",
+      description:
+        "Vises øverst på Om-siden. Forsidens «Om meg»-seksjon har sitt eget bilde og sin egen tekst — de redigeres under «Forside».",
     },
     {
       name: "name",

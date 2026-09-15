@@ -50,6 +50,37 @@ export const forsideSchema = {
       ],
       validation: (r) => r.max(3),
     },
+    {
+      name: "aboutHeading",
+      title: "«Om meg»-seksjon — overskrift",
+      type: "string",
+      description:
+        "Kortversjonen av «Om meg» som vises nederst på forsiden. Helt uavhengig av Om-siden — den redigeres under «Om».",
+    },
+    {
+      name: "aboutImage",
+      title: "«Om meg»-seksjon — bilde",
+      type: "image",
+      options: { hotspot: true },
+    },
+    {
+      name: "aboutBody1",
+      title: "«Om meg»-seksjon — første avsnitt",
+      type: "text",
+      rows: 4,
+    },
+    {
+      name: "aboutBody2",
+      title: "«Om meg»-seksjon — andre avsnitt",
+      type: "text",
+      rows: 4,
+    },
+    {
+      name: "aboutLinkText",
+      title: "«Om meg»-seksjon — lenketekst",
+      type: "string",
+      description: "Teksten på lenken videre til Om-siden",
+    },
   ],
   preview: {
     select: { media: "heroImage" },
