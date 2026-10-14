@@ -45,10 +45,44 @@ export const tjenesteSchema = {
       description: "Vises som denne tjenestens eget bilde i tjenestelisten",
     },
     {
+      name: "prices",
+      title: "Priser",
+      type: "array",
+      description: "Vises som en prisliste under beskrivelsen på tjenestesiden. Dra radene for å endre rekkefølgen",
+      of: [
+        {
+          type: "object",
+          name: "priceRow",
+          title: "Prisrad",
+          fields: [
+            {
+              name: "label",
+              title: "Hva",
+              type: "string",
+              description: "F.eks. «2-roms»",
+              validation: (r) => r.required(),
+            },
+            {
+              name: "price",
+              title: "Pris",
+              type: "string",
+              description: "F.eks. «fra 25 000 kr»",
+              validation: (r) => r.required(),
+            },
+          ],
+          preview: {
+            select: { title: "label", subtitle: "price" },
+          },
+        },
+      ],
+    },
+    {
+      // No longer shown on the site; hidden rather than removed so existing content is kept
       name: "highlights",
       title: "Punkter",
       type: "array",
       of: [{ type: "string" }],
+      hidden: true,
     },
   ],
   preview: {
