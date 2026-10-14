@@ -77,6 +77,13 @@ export const tjenesteSchema = {
       ],
     },
     {
+      name: "priceInfo",
+      title: "Om prisene",
+      type: "text",
+      rows: 4,
+      description: "Vises under prislisten, f.eks. lengde på leien og hva som er inkludert i prisen. Trykk Enter for å starte et nytt avsnitt",
+    },
+    {
       // No longer shown on the site; hidden rather than removed so existing content is kept
       name: "highlights",
       title: "Punkter",
