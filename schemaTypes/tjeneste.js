@@ -24,10 +24,18 @@ export const tjenesteSchema = {
       description: "Lavere tall vises først",
     },
     {
-      name: "description",
-      title: "Beskrivelse",
+      name: "shortDescription",
+      title: "Kort beskrivelse (forsiden)",
       type: "text",
-      rows: 4,
+      rows: 2,
+      description: "Vises på tjenestekortet på forsiden. Hold den til én eller to setninger",
+    },
+    {
+      name: "description",
+      title: "Beskrivelse (tjenestesiden)",
+      type: "text",
+      rows: 8,
+      description: "Den utfyllende beskrivelsen på tjenestesiden. Trykk Enter for å starte et nytt avsnitt",
     },
     {
       name: "heroImage",
